@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Heroes : MonoBehaviour
 {
-    protected int lifeQuantity;
-    protected float velocity;
-    protected float damage;
+    public int lifeQuantity;
+    public float velocity;
+    public float damage;
 
-    protected void Attack() { }
-    protected void Die() { }
-    protected void Revive() { }
-    protected void Movement() { }
-    protected void Pick() { }
+    protected virtual void Attack() { }
+    protected virtual void Die() { }
+    protected virtual void Revive() { }
+    protected virtual void Movement() { }
+    protected virtual void Pick() { }
 }
