@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,47 +6,46 @@ using UnityEngine;
 
 public class meleeplayer : Heroes
 {
-    private Animator ninjaAnim;
-    public int movX;
-    public int movY;
+    public Vector2 Mov { get { return mov; } }
+    public Transform lance;
 
     void Start()
     {
-        ninjaAnim = GetComponent<Animator>();
+        Rb = GetComponent<Rigidbody2D>();
+        Anim = GetComponent<Animator>();
     }
 
     void Update()
     {
-        ninjaAnim.SetFloat("movX", movX);
-        ninjaAnim.SetFloat("movY", movY);
+        mov = new Vector2(Input.GetAxisRaw("Horizontal_P1"), Input.GetAxisRaw("Vertical_P1"));
+        Anim.SetFloat("movX", mov.x);
+        Anim.SetFloat("movY", mov.y);
+        mov.Normalize();
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            Debug.Log("press g");
+            Attack();
+        }
     }
 
     private void FixedUpdate()
     {
         Movement();
+
+        Die();
     }
 
-    protected override void Movement()
+    protected override void Attack()
     {
-        if (Input.GetKey(KeyCode.W))
+       lance.Translate(new Vector2(lance.position.x + 1, lance.position.y));
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
         {
-            movY = 1;
-            transform.Translate(0, 0.01f * velocity, 0);
-        }
-        if (Input.GetKey(KeyCode.A)) 
-        {
-            movX = -1;
-            transform.Translate(-0.01f * velocity, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.S)) 
-        {
-            movY = -1;
-            transform.Translate(0, -0.01f * velocity, 0);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            movX = 1;
-            transform.Translate(0.01f * velocity, 0, 0);
+            lifeQuantity--;
         }
     }
 }

@@ -4,41 +4,30 @@ using UnityEngine;
 
 public class lance : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField] private Transform lanceDirection;
+    [SerializeField] private Transform lanceSpawn;
+
     private meleeplayer meleeScript;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        GameObject PlayerObject = GameObject.FindWithTag("Player");
+        GameObject PlayerObject = GameObject.FindWithTag("Player1");
         if (PlayerObject != null)
         {
             meleeScript = PlayerObject.GetComponent<meleeplayer>();
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if(meleeScript.movX == 1)
+        lanceDirection.transform.position = new Vector2(
+            meleeScript.transform.position.x + meleeScript.Mov.x * 1.5f,
+            meleeScript.transform.position.y + meleeScript.Mov.y * 1.5f
+            );
+        if ( meleeScript.Mov != Vector2.zero)
         {
-            transform.position = new Vector2(0.105f, -0.05f);
-            transform.rotation = Quaternion.Euler(0f, 0f, 90f);
-        }
-        if (meleeScript.movX == -1)
-        {
-            transform.position = new Vector2(-0.105f, -0.05f);
-            transform.rotation = Quaternion.Euler(0f, 0f, -90f);
-        }
-        if (meleeScript.movY == 1)
-        {
-            transform.position = new Vector2(-0.06f, -0.05f);
-            transform.localScale = new Vector2(0.8f, -0.8f);
-        }
-        if (meleeScript.movY == -1)
-        {
-            transform.position = new Vector2(-0.06f, -0.13f);
-            transform.localScale = new Vector2(0.8f, 0.8f);
-        }
+            Quaternion toRotation = Quaternion.LookRotation(lanceDirection.forward, -meleeScript.Mov);
+            lanceDirection.transform.rotation = toRotation;
+        } 
     }
 }
