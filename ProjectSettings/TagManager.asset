@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Player1
   - Enemy
+  - lance
   layers:
   - Default
   - TransparentFX

@@ -219,10 +219,9 @@ GameObject:
   - component: {fileID: 449178355}
   - component: {fileID: 449178356}
   - component: {fileID: 449178357}
-  - component: {fileID: 449178358}
   m_Layer: 0
   m_Name: lance
-  m_TagString: Untagged
+  m_TagString: lance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,7 +234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449178353}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.06, y: -0.12, z: 0}
+  m_LocalPosition: {x: -0.059, y: -0.128, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -282,7 +281,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bf936ee9c65eb344cbf2326ac3239ed3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -322,7 +321,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!95 &449178357
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -339,19 +338,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
---- !u!114 &449178358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449178353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6994d94daf0b1e64790bfa0fec06db65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1491208358
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +351,6 @@ GameObject:
   - component: {fileID: 1491208359}
   - component: {fileID: 1491208361}
   - component: {fileID: 1491208362}
-  - component: {fileID: 1491208363}
   - component: {fileID: 1491208364}
   - component: {fileID: 1491208365}
   m_Layer: 0
@@ -414,7 +400,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 320358929, guid: b8b5e5ef229173449b2a36de2f244a8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -433,7 +419,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491208358}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -8.22, y: -2, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
@@ -459,9 +445,10 @@ MonoBehaviour:
   damage: 0
   mov: {x: 0, y: 0}
   lance: {fileID: 449178354}
+  lanceAnim: {fileID: 0}
 --- !u!95 &1491208362
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -478,21 +465,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
---- !u!114 &1491208363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1491208358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bf33054753c4e74e8ddc935eabc1069, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lanceDirection: {fileID: 449178354}
-  lanceSpawn: {fileID: 0}
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &1491208364
 Rigidbody2D:
   serializedVersion: 4
