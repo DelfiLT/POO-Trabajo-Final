@@ -4,27 +4,30 @@ using UnityEngine;
 
 public class ArcherCombat : MonoBehaviour
 {
-    [SerializeField]
-    private Transform weaponDirection;
+    [SerializeField] private Transform bowDirection;
+    [SerializeField] private Transform bowSpawn;
 
     private PlayerArcher archerScript;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Start()
     {
-        GameObject PlayerObject = GameObject.FindWithTag("Player");
-        if(PlayerObject != null)
+        GameObject PlayerObject = GameObject.FindWithTag("Player2");
+        if (PlayerObject != null)
         {
             archerScript = PlayerObject.GetComponent<PlayerArcher>();
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        weaponDirection.transform.position = new Vector2(
-            archerScript.transform.position.x + archerScript.movX / 2,
-            archerScript.transform.position.x + archerScript.movY / 2);
-
-      // if(archerScript.)
+        bowDirection.transform.position = new Vector2(
+            archerScript.transform.position.x + archerScript.Mov.x * 1f,
+            archerScript.transform.position.y + archerScript.Mov.y * 1f
+            );
+        if (archerScript.Mov != Vector2.zero)
+        {
+            Quaternion toRotation = Quaternion.LookRotation(bowDirection.forward, -archerScript.Mov);
+            bowDirection.transform.rotation = toRotation;
+        }
     }
 }
