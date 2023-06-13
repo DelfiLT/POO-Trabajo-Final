@@ -4,13 +4,28 @@ using UnityEngine;
 
 public class Heroes : MonoBehaviour
 {
-    protected int lifeQuantity;
-    protected float velocity;
-    protected float damage;
+    [SerializeField] protected int lifeQuantity;
+    [SerializeField] protected float velocity;
+    [SerializeField] protected float damage;
 
-    protected void Attack() { }
-    protected void Die() { }
-    protected void Revive() { }
-    protected void Movement() { }
-    protected void Pick() { }
+    protected Animator Anim;
+    protected Rigidbody2D Rb;
+
+    public Vector2 mov;
+
+    protected virtual void Attack() { }
+    protected virtual void Die()
+    {
+        if (lifeQuantity == 0)
+        {
+            Debug.Log("Die");
+        }
+    }
+    protected virtual void Revive() { }
+    protected virtual void Pick() { }
+
+    protected virtual void Movement()
+    {
+        Rb.MovePosition(Rb.position + velocity * Time.deltaTime * mov);
+    }
 }
