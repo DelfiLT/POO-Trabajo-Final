@@ -25,12 +25,6 @@ public class PlayerArcher : Heroes
         Anim.SetFloat("movX", mov.x);
         Anim.SetFloat("movY", mov.y);
         mov.Normalize();
-
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Debug.Log("press P");
-            Attack();
-        }
     }
 
     private void FixedUpdate()
@@ -38,11 +32,6 @@ public class PlayerArcher : Heroes
         Movement();
 
         Die();
-    }
-
-    protected override void Attack()
-    {
-        //lance.Translate(new Vector2(lance.position.x + 1, lance.position.y));
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
