@@ -6,14 +6,12 @@ public class Heroes : MonoBehaviour
 {
     [SerializeField] protected int lifeQuantity;
     [SerializeField] protected float velocity;
-    [SerializeField] protected float damage;
 
     protected Animator Anim;
     protected Rigidbody2D Rb;
 
     public Vector2 mov;
 
-    protected virtual void Attack() { }
     protected virtual void Die()
     {
         if (lifeQuantity == 0)
