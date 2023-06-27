@@ -40,18 +40,12 @@ public class BulletEnemyArcher : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player1") || collision.gameObject.CompareTag("Player2"))
         {
-            Destroy(gameObject);
             Instantiate(particles, transform.position, Quaternion.identity);
+            Destroy(this.gameObject);
         }
     }
 }

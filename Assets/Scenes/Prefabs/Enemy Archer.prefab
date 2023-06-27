@@ -89,7 +89,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &8532983978606763103
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -106,7 +106,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &8532983978606763099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,9 +119,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0125372a88bf6b2459b5d8a271b22920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeQuantityEnemy: 10
-  velocityEnemy: 5
-  damageEnemy: 1
+  lifeQuantity: 0
+  velocity: 4
+  range: 10
   lineOfSite: 9.16
   shootingRange: 4.45
   fireRate: 1
