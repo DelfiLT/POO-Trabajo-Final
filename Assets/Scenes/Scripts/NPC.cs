@@ -3,35 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class NPC : MonoBehaviour, Idialog
+public class NPC : MonoBehaviour
 {
     [SerializeField] private scriptableNPC npcData;
-    public int hp;
+    private int hp = 1000;
     public string[] dialogs;
     public TextMeshProUGUI dialog;
+    private float timeMax;
+    private float time;
 
     void Start()
     {
-        hp = npcData.HP;
         dialogs = npcData.Dialogs;
-        dialog = npcData.Dialog;
+        timeMax = npcData.TimeMax;
     }
 
     private void Update()
     {
-        InvokeRepeating("Action", 1f, 3f);
-    }
-
-    public void Action() 
-    {
-        npcData.Talk();
+        time += Time.deltaTime;
+        if (time > timeMax) 
+        {
+            StartCoroutine(deleteDialog());
+            time = 0;
+        } 
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Enemy"))
         {
-            npcData.GetDamage();
+            hp = hp--;
         }
     }
 
@@ -39,7 +40,15 @@ public class NPC : MonoBehaviour, Idialog
     {
         if(collision.gameObject.CompareTag("EnemyFlyer"))
         {
-            npcData.GetDamage();
+            hp = hp--;
         }
     }
+
+    IEnumerator deleteDialog ()
+    {
+        dialog.text = npcData.Talk();
+        yield return new WaitForSeconds(2f);
+        dialog.text = "";
+    }
+
 }
