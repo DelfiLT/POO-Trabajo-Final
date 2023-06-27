@@ -4,19 +4,9 @@ using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
-    [SerializeField] protected int lifeQuantityEnemy;
-    [SerializeField] protected float velocityEnemy;
-    [SerializeField] protected float damageEnemy;
+    [SerializeField] protected int lifeQuantity;
+    [SerializeField] protected float velocity;
 
     protected Animator AnimEnemy;
-    protected Rigidbody2D RbEnemy;
-
-    protected virtual void AttackPlayer() { }
-    protected virtual void DieEnemy()
-    {
-        if (lifeQuantityEnemy == 0)
-        {
-            Debug.Log("Enemy has died");
-        }
-    }
+    protected virtual void Die() { }
 }
