@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3292953622505612894}
   - component: {fileID: 3292953622505612895}
-  - component: {fileID: 3292953622505612889}
   - component: {fileID: 3292953622505612888}
   - component: {fileID: 5319172168184225774}
+  - component: {fileID: 8083377966423393553}
   m_Layer: 0
   m_Name: EnemyFlyer
   m_TagString: EnemyFlyer
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3292953622505612892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.46, y: 2.71, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -87,25 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3292953622505612889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3292953622505612892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c8235f2025841542a432413f049dd29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifeQuantity: 3
-  velocity: 5
-  range: 10
-  distanceFromPlayer1: 0
-  distanceFromPlayer2: 0
-  player1Transform: {fileID: 0}
-  player2Transform: {fileID: 0}
 --- !u!58 &3292953622505612888
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -124,7 +105,7 @@ CircleCollider2D:
   m_Radius: 0.10709504
 --- !u!95 &5319172168184225774
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -141,4 +122,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &8083377966423393553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3292953622505612892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dde03bf0684e6304693409d469bad010, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeQuantity: 3
+  velocity: 4
+  range: 10
