@@ -7,6 +7,7 @@ public class enemyFollow : Enemies
     void Start()
     {
         FindPlayer();
+        damage = 1;
     }
 
     void Update()

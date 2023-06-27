@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class meleeplayer : Heroes
+public class meleeplayer : Heroes, IgetDamagedInterface
 {
     public Vector2 Mov { get { return mov; } }
     public GameObject lance;
