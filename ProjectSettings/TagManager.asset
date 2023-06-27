@@ -11,6 +11,7 @@ TagManager:
   - Enemy
   - lance
   - EnemyFlyer
+  - npcDialog
   layers:
   - Default
   - TransparentFX
