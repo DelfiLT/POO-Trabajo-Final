@@ -40,18 +40,16 @@ public class meleeplayer : Heroes, IgetDamagedInterface
         }
     }
 
+    public void GetDamaged(int damage)
+    {
+        lifeQuantity -= damage;
+        if (lifeQuantity <= 0) { Die(); }
+    }
+
     private void FixedUpdate()
     {
         Movement();
         Die();
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.GetComponent<Enemies>())
-        {
-            lifeQuantity--;
-        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class NPC : MonoBehaviour
+public class NPC : MonoBehaviour, IgetDamagedInterface
 {
     [SerializeField] private scriptableNPC npcData;
-    private int hp = 1000;
+    private int hp = 1;
     public string[] dialogs;
     public TextMeshProUGUI dialog;
     private float timeMax;
@@ -28,21 +28,6 @@ public class NPC : MonoBehaviour
         } 
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if(collision.gameObject.CompareTag("Enemy"))
-        {
-            hp = hp--;
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.gameObject.CompareTag("EnemyFlyer"))
-        {
-            hp = hp--;
-        }
-    }
 
     IEnumerator deleteDialog ()
     {
@@ -51,4 +36,9 @@ public class NPC : MonoBehaviour
         dialog.text = "";
     }
 
+    public void GetDamaged(int damage)
+    {
+        hp -= damage;
+        if (hp <= 0) { Debug.Log("Villager death"); }
+    }
 }

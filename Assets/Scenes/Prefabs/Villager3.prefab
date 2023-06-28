@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 263604047680040715}
   - component: {fileID: 8981889839219668765}
   - component: {fileID: 4115201333420010320}
+  - component: {fileID: -5758216172676092977}
   m_Layer: 0
   m_Name: Villager3
   m_TagString: Untagged
@@ -337,3 +338,29 @@ MonoBehaviour:
   npcData: {fileID: 11400000, guid: 7f318b420dabb6e479327309f33bdec9, type: 2}
   dialogs: []
   dialog: {fileID: 3223312916605916264}
+--- !u!61 &-5758216172676092977
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9161051435491191192}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.16, y: 0.16}
+  m_EdgeRadius: 0

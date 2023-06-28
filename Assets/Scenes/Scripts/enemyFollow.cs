@@ -45,4 +45,13 @@ public class enemyFollow : Enemies
             Destroy(this.gameObject);
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.GetComponent<IgetDamagedInterface>() != null)
+        {
+            collision.gameObject.GetComponent<IgetDamagedInterface>().GetDamaged(damage);
+        }
+    }
+
 }
