@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Heroes : MonoBehaviour
 {
-    [SerializeField] protected int lifeQuantity;
+    [SerializeField] protected int hp;
     [SerializeField] protected float velocity;
+    [SerializeField] protected int lifeQuantity = 3;
+    [SerializeField] protected bool canRevive = false;
 
     protected Animator Anim;
     protected Rigidbody2D Rb;
@@ -14,9 +16,11 @@ public class Heroes : MonoBehaviour
 
     protected virtual void Die()
     {
-        if (lifeQuantity == 0)
+        if (lifeQuantity > 0)
         {
-            Debug.Log("Die");
+            lifeQuantity--;
+            velocity = 0;
+            Debug.Log("Mostrar pantalla roja");
         }
     }
     protected virtual void Revive() { }

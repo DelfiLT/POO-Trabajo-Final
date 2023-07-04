@@ -50,7 +50,7 @@ public class meleeplayer : Heroes
     {
         if (collision.gameObject.GetComponent<Enemies>())
         {
-            lifeQuantity--;
+            hp--;
         }
     }
 
@@ -58,7 +58,7 @@ public class meleeplayer : Heroes
     {
         if (collision.gameObject.GetComponent<Enemies>())
         {
-            lifeQuantity--;
+            hp--;
         }
     }
 }
