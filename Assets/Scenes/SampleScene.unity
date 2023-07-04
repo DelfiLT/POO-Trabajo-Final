@@ -251,6 +251,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5157064885717738425, guid: ed4ba671759ca2d44a452fdbda280498, type: 3}
+      propertyPath: hp
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed4ba671759ca2d44a452fdbda280498, type: 3}
 --- !u!1001 &388402567
@@ -627,6 +631,14 @@ PrefabInstance:
     - target: {fileID: 2232373488113996074, guid: 666da3309163e0a4894a06475909f347, type: 3}
       propertyPath: m_Name
       value: playerArcher
+      objectReference: {fileID: 0}
+    - target: {fileID: 2232373488113996086, guid: 666da3309163e0a4894a06475909f347, type: 3}
+      propertyPath: hp
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2232373488113996086, guid: 666da3309163e0a4894a06475909f347, type: 3}
+      propertyPath: lifeQuantity
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2232373488113996087, guid: 666da3309163e0a4894a06475909f347, type: 3}
       propertyPath: m_RootOrder
