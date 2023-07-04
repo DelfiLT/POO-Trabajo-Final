@@ -4,18 +4,20 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class meleeplayer : Heroes
+public class meleeplayer : Heroes, Iobject
 {
     public Vector2 Mov { get { return mov; } }
     public GameObject lance;
     public Animator lanceAnim;
+    public int lanceDamage = 1;
 
     void Start()
     {
-        lance = GameObject.FindGameObjectWithTag("lance");
-        lanceAnim = GameObject.FindGameObjectWithTag("lance").GetComponent<Animator>();
         Rb = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
+
+        lance = GameObject.FindGameObjectWithTag("lance");
+        lanceAnim = GameObject.FindGameObjectWithTag("lance").GetComponent<Animator>();
         lance.SetActive(false);
     }
 
@@ -46,11 +48,27 @@ public class meleeplayer : Heroes
         Die();
     }
 
+    public void PickObject(string objectName)
+    {
+        if(objectName == "life")
+        {
+            hp = hp + 5;
+        }
+        if(objectName == "velocity")
+        {
+            velocity = velocity * 1.2f;
+        }
+        if(objectName == "damage")
+        {
+            lanceDamage++;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<Enemies>())
         {
-            lifeQuantity--;
+            hp--;
         }
     }
 
@@ -58,7 +76,18 @@ public class meleeplayer : Heroes
     {
         if (collision.gameObject.GetComponent<Enemies>())
         {
-            lifeQuantity--;
+            hp--;
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.GetComponent<Heroes>())
+        {
+            if(Input.GetKeyDown(KeyCode.O))
+            {
+                Revive();
+            }
         }
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemies : MonoBehaviour
 {
-    [SerializeField] protected int lifeQuantity;
+    [SerializeField] protected int hp;
     [SerializeField] protected float velocity;
     [SerializeField] protected float range;
 
