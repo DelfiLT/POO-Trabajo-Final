@@ -11,14 +11,20 @@ public class enemyFollow : Enemies
 
     void Update()
     {
-        distanceFromPlayer1 = Vector2.Distance(player1Transform.position, transform.position);
-        distanceFromPlayer2 = Vector2.Distance(player2Transform.position, transform.position);
+        if(player1Transform != null)
+        {
+            distanceFromPlayer1 = Vector2.Distance(player1Transform.position, transform.position);
+        }
+        if(player2Transform != null)
+        {
+            distanceFromPlayer2 = Vector2.Distance(player2Transform.position, transform.position);
+        }
 
-        if (distanceFromPlayer1 < range && distanceFromPlayer1 < distanceFromPlayer2)
+        if (distanceFromPlayer1 < range && distanceFromPlayer1 < distanceFromPlayer2 && player1Transform != null)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player1Transform.position, velocity * Time.deltaTime);
         }
-        if (distanceFromPlayer2 < range && distanceFromPlayer2 < distanceFromPlayer1)
+        if (distanceFromPlayer2 < range && distanceFromPlayer2 < distanceFromPlayer1 && player2Transform != null)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player2Transform.position, velocity * Time.deltaTime);
         }
@@ -33,13 +39,13 @@ public class enemyFollow : Enemies
     {
         if (collision.gameObject.CompareTag("lance"))
         {
-            lifeQuantity--;
+            hp--;
         }
     }
 
     protected override void Die()
     {
-        if (lifeQuantity == 0)
+        if (hp == 0)
         {
             Destroy(this.gameObject);
         }

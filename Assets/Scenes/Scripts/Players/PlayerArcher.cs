@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerArcher : Heroes
 {
     public Vector2 Mov { get { return mov; } }
-
     public int movX;
     public int movY;
 
@@ -29,11 +28,30 @@ public class PlayerArcher : Heroes
         Die();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.GetComponent<Enemies>())
         {
             hp--;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<Enemies>())
+        {
+            hp--;
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.GetComponent<Heroes>())
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Revive();
+            }
         }
     }
 }

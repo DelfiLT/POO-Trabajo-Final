@@ -12,14 +12,11 @@ public class EnemyArcher : Enemies
     public GameObject bullet;
     public GameObject bulletParent;
 
-
-    // Start is called before the first frame update
     void Start()
     {
        FindPlayer();
     }
 
-    // Update is called once per frame
     void Update()
     {
         distanceFromPlayer1 = Vector2.Distance(player1Transform.position, transform.position);

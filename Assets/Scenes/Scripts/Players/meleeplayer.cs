@@ -12,10 +12,11 @@ public class meleeplayer : Heroes
 
     void Start()
     {
-        lance = GameObject.FindGameObjectWithTag("lance");
-        lanceAnim = GameObject.FindGameObjectWithTag("lance").GetComponent<Animator>();
         Rb = GetComponent<Rigidbody2D>();
         Anim = GetComponent<Animator>();
+
+        lance = GameObject.FindGameObjectWithTag("lance");
+        lanceAnim = GameObject.FindGameObjectWithTag("lance").GetComponent<Animator>();
         lance.SetActive(false);
     }
 
@@ -59,6 +60,17 @@ public class meleeplayer : Heroes
         if (collision.gameObject.GetComponent<Enemies>())
         {
             hp--;
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.GetComponent<Heroes>())
+        {
+            if(Input.GetKeyDown(KeyCode.O))
+            {
+                Revive();
+            }
         }
     }
 }
