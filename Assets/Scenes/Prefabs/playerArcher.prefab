@@ -297,9 +297,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7f7ed3c1b47d2e4b8b41e660866a036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 0
+  velocity: 10
   lifeQuantity: 80
-  velocity: 5
-  damage: 0
+  canRevive: 0
   mov: {x: 0, y: 0}
   movX: 0
   movY: 0
@@ -405,9 +406,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7f7ed3c1b47d2e4b8b41e660866a036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeQuantity: 0
+  hp: 0
   velocity: 0
-  damage: 0
+  lifeQuantity: 0
+  canRevive: 0
   mov: {x: 0, y: 0}
   movX: 0
   movY: 0

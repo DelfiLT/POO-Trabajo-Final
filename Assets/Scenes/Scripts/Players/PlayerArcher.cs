@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerArcher : Heroes
+public class PlayerArcher : Heroes, Iobject
 {
     public Vector2 Mov { get { return mov; } }
     public int movX;
     public int movY;
+    public int arrowDamage = 1;
 
     void Start()
     {
@@ -26,6 +27,22 @@ public class PlayerArcher : Heroes
     {
         Movement();
         Die();
+    }
+
+    public void PickObject(string objectName)
+    {
+        if (objectName == "life")
+        {
+            hp = hp + 5;
+        }
+        if (objectName == "velocity")
+        {
+            velocity = velocity * 1.2f;
+        }
+        if(objectName == "damage")
+        {
+            arrowDamage++;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

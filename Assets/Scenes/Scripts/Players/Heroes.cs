@@ -39,6 +39,7 @@ public class Heroes : MonoBehaviour
             Debug.Log("No more lives");
         }
     }
+
     protected virtual void Revive() 
     {
         if(canRevive)
@@ -46,7 +47,6 @@ public class Heroes : MonoBehaviour
             lifeQuantity--;
             hp = 10;
             velocity = 10;
-            Debug.Log("Revived");
         }
     }
 

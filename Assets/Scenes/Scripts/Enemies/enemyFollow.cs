@@ -39,13 +39,19 @@ public class enemyFollow : Enemies
     {
         if (collision.gameObject.CompareTag("lance"))
         {
-            hp--;
+            int lanceDamage = GameObject.FindGameObjectWithTag("Player1").GetComponent<meleeplayer>().lanceDamage;
+            hp = hp - lanceDamage;
+        }
+        if (collision.gameObject.CompareTag("Arrow"))
+        {
+            int arrowDamage = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerArcher>().arrowDamage;
+            hp = hp - arrowDamage;
         }
     }
 
     protected override void Die()
     {
-        if (hp == 0)
+        if (hp <= 0)
         {
             Destroy(this.gameObject);
         }
