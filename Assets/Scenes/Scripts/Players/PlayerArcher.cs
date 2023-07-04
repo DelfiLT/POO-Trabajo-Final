@@ -8,6 +8,8 @@ public class PlayerArcher : Heroes, Iobject
     public int movX;
     public int movY;
     public int arrowDamage = 1;
+    public GameObject deathPanel;
+    public GameObject revivePanel;
 
     void Start()
     {
@@ -27,6 +29,7 @@ public class PlayerArcher : Heroes, Iobject
     {
         Movement();
         Die();
+        deathScreen();
     }
 
     public void PickObject(string objectName)
@@ -42,6 +45,24 @@ public class PlayerArcher : Heroes, Iobject
         if(objectName == "damage")
         {
             arrowDamage++;
+        }
+    }
+
+    public void deathScreen()
+    {
+        if (hp == 0 && lifeQuantity > 0)
+        {
+            revivePanel.SetActive(true);
+        }
+
+        if (hp > 0)
+        {
+            revivePanel.SetActive(false);
+        }
+
+        if (hp == 0 && lifeQuantity == 0)
+        {
+            deathPanel.SetActive(true);
         }
     }
 
