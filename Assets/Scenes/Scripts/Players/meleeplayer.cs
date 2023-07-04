@@ -10,6 +10,9 @@ public class meleeplayer : Heroes, Iobject
     public GameObject lance;
     public Animator lanceAnim;
     public int lanceDamage = 1;
+    public GameObject deathPanel;
+    public GameObject revivePanel;
+
 
     void Start()
     {
@@ -40,12 +43,15 @@ public class meleeplayer : Heroes, Iobject
         {
             lance.SetActive(false);
         }
+
+
     }
 
     private void FixedUpdate()
     {
         Movement();
         Die();
+        deathScreen();
     }
 
     public void PickObject(string objectName)
@@ -61,6 +67,24 @@ public class meleeplayer : Heroes, Iobject
         if(objectName == "damage")
         {
             lanceDamage++;
+        }
+    }
+
+    public void deathScreen()
+    {
+        if(hp == 0 && lifeQuantity > 0)
+        {
+            revivePanel.SetActive(true);
+        }
+
+        if (hp > 0)
+        {
+            revivePanel.SetActive(false);
+        }
+
+        if (hp == 0 && lifeQuantity == 0)
+        {
+            deathPanel.SetActive(true);
         }
     }
 
