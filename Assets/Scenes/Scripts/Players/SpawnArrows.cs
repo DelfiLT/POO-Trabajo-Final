@@ -12,7 +12,6 @@ public class SpawnArrows : MonoBehaviour
     [SerializeField] private Transform bowDirection;
     [SerializeField] private Transform bowSpawn;
 
-    private PlayerArcher archerScript;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))

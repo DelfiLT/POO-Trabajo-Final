@@ -8,6 +8,7 @@ public class Heroes : MonoBehaviour
     [SerializeField] protected float velocity;
     [SerializeField] protected int lifeQuantity = 3;
     [SerializeField] protected bool canRevive = false;
+    [SerializeField] protected bool canFire = false;
 
     protected Animator Anim;
     protected Rigidbody2D Rb;
@@ -29,14 +30,12 @@ public class Heroes : MonoBehaviour
         if(hp == 0 && canRevive)
         {
             velocity = 0;
-            Debug.Log("Show red screen");
         }
 
         if(hp == 0 && lifeQuantity <= 0)
         {
             canRevive = false;
             Destroy(this.gameObject);
-            Debug.Log("No more lives");
         }
     }
 
@@ -49,8 +48,6 @@ public class Heroes : MonoBehaviour
             velocity = 10;
         }
     }
-
-    protected virtual void Pick() { }
 
     protected virtual void Movement()
     {

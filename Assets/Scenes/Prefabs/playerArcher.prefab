@@ -304,6 +304,9 @@ MonoBehaviour:
   mov: {x: 0, y: 0}
   movX: 0
   movY: 0
+  arrowDamage: 1
+  deathPanel: {fileID: 0}
+  revivePanel: {fileID: 0}
 --- !u!95 &2232373488113996085
 Animator:
   serializedVersion: 4
@@ -355,8 +358,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2232373488459337560}
   - component: {fileID: 2232373488459337575}
-  - component: {fileID: 2232373488459337574}
-  - component: {fileID: 2232373488459337573}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: GameController
@@ -394,45 +395,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bowDirection: {fileID: 2232373487671857810}
   bowSpawn: {fileID: 7191879015451603624, guid: 8c97dc3130a376a43be6b058eb895923, type: 3}
---- !u!114 &2232373488459337574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2232373488459337561}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7f7ed3c1b47d2e4b8b41e660866a036, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 0
-  velocity: 0
-  lifeQuantity: 0
-  canRevive: 0
-  mov: {x: 0, y: 0}
-  movX: 0
-  movY: 0
---- !u!95 &2232373488459337573
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2232373488459337561}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2232373489622466852
 GameObject:
   m_ObjectHideFlags: 0

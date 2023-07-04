@@ -14,7 +14,6 @@ public class BulletEnemyArcher : MonoBehaviour
 
     public GameObject particles;
 
-    // Start is called before the first frame update
     void Start()
     {
         bulletRB = GetComponent<Rigidbody2D>();

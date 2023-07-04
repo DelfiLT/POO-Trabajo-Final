@@ -134,7 +134,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!114 &8460169123957336372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,6 +150,7 @@ MonoBehaviour:
   hp: 4
   velocity: 4
   range: 10
+  damage: 0
 --- !u!95 &8460169123957336375
 Animator:
   serializedVersion: 4
