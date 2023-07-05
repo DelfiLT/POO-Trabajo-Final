@@ -12,6 +12,10 @@ TagManager:
   - lance
   - EnemyFlyer
   - npcDialog
+  - revivePanel1
+  - revivePanel2
+  - deathPanel1
+  - deathPanel2
   layers:
   - Default
   - TransparentFX
