@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-public class EnemyArcher : Enemies
+public class EnemyArcher : Enemies, IgetEnemyDamaged
 {
     public float lineOfSite;
     public float shootingRange;
@@ -54,18 +54,9 @@ public class EnemyArcher : Enemies
         Die();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void GetEnemyDamage(int damage)
     {
-        if (collision.gameObject.CompareTag("lance"))
-        {
-            int lanceDamage = GameObject.FindGameObjectWithTag("Player1").GetComponent<meleeplayer>().lanceDamage;
-            hp = hp - lanceDamage;
-        }
-        if (collision.gameObject.CompareTag("Arrow"))
-        {
-            int arrowDamage = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerArcher>().arrowDamage;
-            hp = hp - arrowDamage;
-        }
+        hp -= damage;
     }
 
     protected override void Die()
