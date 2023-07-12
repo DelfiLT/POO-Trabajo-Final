@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,11 +6,19 @@ using UnityEngine;
 public class Arrow : MonoBehaviour
 {
     public float speedArrow;
-    public Transform arrow;
+    public int arrowDamage = 1;
 
     void Update()
     {
-        transform.Translate(Vector2.up * speedArrow * Time.deltaTime);
+        this.transform.Translate(Vector2.up * speedArrow * Time.deltaTime);
         Destroy(gameObject, 0.5f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.GetComponent<IgetEnemyDamaged>() != null)
+        {
+            collision.gameObject.GetComponent<IgetEnemyDamaged>().GetEnemyDamage(arrowDamage);
+        }
     }
 }

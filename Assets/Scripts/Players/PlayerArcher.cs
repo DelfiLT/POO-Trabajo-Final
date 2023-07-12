@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,14 +6,16 @@ using UnityEngine;
 public class PlayerArcher : Heroes, Iobject, IgetDamagedInterface
 {
     public Vector2 Mov { get { return mov; } }
-    public int movX;
-    public int movY;
-    public int arrowDamage = 1;
-    public GameObject deathPanel;
-    public GameObject revivePanel;
+    private Arrow arrowScript;
+
+    public static event Action<string> onSceneChange;
+
+    public GameObject damageScrollUI;
+    public GameObject velocityScrollUI;
 
     void Start()
     {
+        arrowScript = GameObject.FindGameObjectWithTag("Arrow")?.GetComponent<Arrow>();
         Anim = GetComponent<Animator>();
         Rb = GetComponent<Rigidbody2D>();
     }
@@ -45,11 +48,11 @@ public class PlayerArcher : Heroes, Iobject, IgetDamagedInterface
         }
         if (objectName == "velocity")
         {
-            velocity = velocity * 1.2f;
+            StartCoroutine(activeVelBoost());
         }
         if(objectName == "damage")
         {
-            arrowDamage++;
+            StartCoroutine(activeDmgBoost());
         }
     }
 
@@ -57,17 +60,17 @@ public class PlayerArcher : Heroes, Iobject, IgetDamagedInterface
     {
         if (hp == 0 && lifeQuantity > 0)
         {
-            revivePanel.SetActive(true);
+            onSceneChange?.Invoke("revivePanelP2");
         }
 
         if (hp > 0)
         {
-            revivePanel.SetActive(false);
+            onSceneChange?.Invoke("disRevivePanelP2");
         }
 
         if (hp == 0 && lifeQuantity == 0)
         {
-            deathPanel.SetActive(true);
+            onSceneChange?.Invoke("deathPanelP2");
         }
     }
 
@@ -80,5 +83,23 @@ public class PlayerArcher : Heroes, Iobject, IgetDamagedInterface
                 Revive();
             }
         }
+    }
+
+    IEnumerator activeDmgBoost()
+    {
+        damageScrollUI.SetActive(true);
+        arrowScript.arrowDamage++;
+        yield return new WaitForSeconds(10f);
+        damageScrollUI.SetActive(false);
+        arrowScript.arrowDamage--;
+    }
+
+    IEnumerator activeVelBoost()
+    {
+        velocityScrollUI.SetActive(true);
+        velocity = velocity * 1.2f;
+        yield return new WaitForSeconds(10f);
+        velocityScrollUI.SetActive(false);
+        velocity = velocity / 1.2f;
     }
 }
