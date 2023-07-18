@@ -9,9 +9,7 @@ public class PlayerArcher : Heroes, Iobject, IgetDamagedInterface
     private Arrow arrowScript;
 
     public static event Action<string> onSceneChange;
-
-    public GameObject damageScrollUI;
-    public GameObject velocityScrollUI;
+    public static event Action<string> onUIP2Change;
 
     void Start()
     {
@@ -87,19 +85,19 @@ public class PlayerArcher : Heroes, Iobject, IgetDamagedInterface
 
     IEnumerator activeDmgBoost()
     {
-        damageScrollUI.SetActive(true);
+        onUIP2Change?.Invoke("damageScrollP2");
         arrowScript.arrowDamage++;
         yield return new WaitForSeconds(10f);
-        damageScrollUI.SetActive(false);
+        onUIP2Change?.Invoke("disDamageScrollP2");
         arrowScript.arrowDamage--;
     }
 
     IEnumerator activeVelBoost()
     {
-        velocityScrollUI.SetActive(true);
+        onUIP2Change?.Invoke("velocityScrollP2");
         velocity = velocity * 1.2f;
         yield return new WaitForSeconds(10f);
-        velocityScrollUI.SetActive(false);
+        onUIP2Change?.Invoke("disVelocityScrollP2");
         velocity = velocity / 1.2f;
     }
 }

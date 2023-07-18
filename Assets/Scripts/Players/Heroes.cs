@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Heroes : MonoBehaviour
 {
@@ -30,7 +31,6 @@ public class Heroes : MonoBehaviour
         {
             velocity = 0;
             Rb.mass = 99999;
-
         }
 
         if (hp <= 0 && lifeQuantity <= 0)
@@ -48,7 +48,6 @@ public class Heroes : MonoBehaviour
             hp = 10;
             velocity = 10;
             Rb.mass = 2000;
-            
         }
     }
 

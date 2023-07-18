@@ -10,13 +10,14 @@ public class meleeplayer : Heroes, Iobject, IgetDamagedInterface
     public Vector2 Mov { get { return mov; } }
     public Animator lanceAnim;
     
-    public lance lanceScript;
+    public lance lanceScript; 
 
     public static event Action<string> onSceneChange;
+    public static event Action<string> onUIP1Change;
+    public delegate void HeartEvent();
+    public static HeartEvent heartEvent;
 
     public GameObject lance;
-    public GameObject damageScrollUI;
-    public GameObject velocityScrollUI;
 
     void Start()
     {
@@ -60,6 +61,7 @@ public class meleeplayer : Heroes, Iobject, IgetDamagedInterface
     public void GetDamaged(int damage)
     {
         hp -=  damage;
+        heartEvent?.Invoke();
     }
 
     public void PickObject(string objectName)
@@ -109,19 +111,19 @@ public class meleeplayer : Heroes, Iobject, IgetDamagedInterface
 
     IEnumerator activeDmgBoost()
     {
-        damageScrollUI.SetActive(true);
+        onUIP1Change?.Invoke("damageScrollP1");
         lanceScript.lanceDamage++;
         yield return new WaitForSeconds(10f);
-        damageScrollUI.SetActive(false);
+        onUIP1Change?.Invoke("disDamageScrollP1");
         lanceScript.lanceDamage--;
     }
 
     IEnumerator activeVelBoost()
     {
-        velocityScrollUI.SetActive(true);
+        onUIP1Change?.Invoke("velocityScrollP1");
         velocity = velocity * 1.2f;
         yield return new WaitForSeconds(10f);
-        velocityScrollUI.SetActive(false);
+        onUIP1Change?.Invoke("disVelocityScrollP1");
         velocity = velocity / 1.2f;
     }
 }

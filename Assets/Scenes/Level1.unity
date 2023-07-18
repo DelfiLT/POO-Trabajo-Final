@@ -1464,7 +1464,7 @@ GameObject:
   - component: {fileID: 567693749}
   m_Layer: 5
   m_Name: Fire Scroll P1
-  m_TagString: Untagged
+  m_TagString: damageScrollP1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2373,7 +2373,7 @@ GameObject:
   - component: {fileID: 921357155}
   m_Layer: 5
   m_Name: Fire Scroll P2
-  m_TagString: Untagged
+  m_TagString: damageScrollP2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3676,7 +3676,7 @@ PrefabInstance:
       objectReference: {fileID: 695943928}
     - target: {fileID: 2232373488113996086, guid: 666da3309163e0a4894a06475909f347, type: 3}
       propertyPath: lifeQuantity
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2232373488113996086, guid: 666da3309163e0a4894a06475909f347, type: 3}
       propertyPath: damageScrollUI
@@ -4135,6 +4135,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1815595409}
   - component: {fileID: 1815595408}
+  - component: {fileID: 1815595410}
+  - component: {fileID: 1815595411}
   m_Layer: 0
   m_Name: EventManager
   m_TagString: Untagged
@@ -4173,6 +4175,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1815595410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815595407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916879b09f285f041bd96ea0bdba4e8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageScrollP1: {fileID: 567693747}
+  velocityScrollP1: {fileID: 1996705091}
+  damageScrollP2: {fileID: 921357153}
+  velocityScrollP2: {fileID: 1816669895}
+--- !u!114 &1815595411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1815595407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d97636a4c02e004996bc3ce64c3cc77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Hearts: []
+  heartCount: 0
 --- !u!1 &1816669895
 GameObject:
   m_ObjectHideFlags: 0
@@ -4186,7 +4218,7 @@ GameObject:
   - component: {fileID: 1816669897}
   m_Layer: 5
   m_Name: Electric Scroll P2
-  m_TagString: Untagged
+  m_TagString: velocityScrollP2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4904,7 +4936,7 @@ GameObject:
   - component: {fileID: 1996705093}
   m_Layer: 5
   m_Name: Electric Scroll P1
-  m_TagString: Untagged
+  m_TagString: velocityScrollP1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
