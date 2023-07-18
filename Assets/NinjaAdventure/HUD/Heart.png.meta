@@ -256,10 +256,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Heart_0: 760094517
-      Heart_1: -1036339611
       Heart_2: 646714830
       Heart_3: -524719115
+      Heart_0: 760094517
+      Heart_1: -1036339611
       Heart_4: -446759216
   spritePackingTag: 
   pSDRemoveMatte: 0

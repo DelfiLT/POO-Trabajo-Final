@@ -487,22 +487,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Reptile_0: -1727830803
-      Reptile_1: 2008847847
       Reptile_10: -1899586053
-      Reptile_11: -879187400
-      Reptile_12: 2024186932
-      Reptile_13: -778254019
-      Reptile_14: 804300380
-      Reptile_15: -811908916
       Reptile_2: -694197075
-      Reptile_3: 1791967360
-      Reptile_4: -2070675773
-      Reptile_5: -1319391459
-      Reptile_6: 1770457177
-      Reptile_7: 281328077
+      Reptile_12: 2024186932
       Reptile_8: -1332324134
+      Reptile_3: 1791967360
       Reptile_9: 402609663
+      Reptile_13: -778254019
+      Reptile_5: -1319391459
+      Reptile_7: 281328077
+      Reptile_11: -879187400
+      Reptile_14: 804300380
+      Reptile_1: 2008847847
+      Reptile_4: -2070675773
+      Reptile_6: 1770457177
+      Reptile_15: -811908916
+      Reptile_0: -1727830803
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -256,11 +256,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CanonBall_0: 878520203
-      CanonBall_1: 1597701783
-      CanonBall_2: 810394166
       CanonBall_3: 129279439
+      CanonBall_0: 878520203
       CanonBall_4: -1336671824
+      CanonBall_2: 810394166
+      CanonBall_1: 1597701783
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

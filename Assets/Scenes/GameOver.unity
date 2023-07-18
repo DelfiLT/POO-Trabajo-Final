@@ -271,8 +271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33e343c74bf650e489b5095262274b75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Level: 0
-  indexlevel: 0
 --- !u!1 &653875032
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,13 +628,13 @@ MonoBehaviour:
       - m_Target: {fileID: 305723232}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 3
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Menu
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &959741701
@@ -839,14 +837,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 305723232}
         m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: ChangeLevel
-        m_Mode: 3
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Level1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1536438207
@@ -1131,14 +1129,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2044389553}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
+  m_HorizontalAxis: Horizontal_P1
+  m_VerticalAxis: Vertical_P2
   m_SubmitButton: Submit
   m_CancelButton: Cancel
   m_InputActionsPerSecond: 10

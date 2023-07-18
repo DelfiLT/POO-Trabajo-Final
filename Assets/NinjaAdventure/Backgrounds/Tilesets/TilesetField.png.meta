@@ -235,10 +235,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TilesetField_0: -485166891
       TilesetField_1: -682612244
       TilesetField_2: 940549307
       TilesetField_3: -300154215
+      TilesetField_0: -485166891
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
