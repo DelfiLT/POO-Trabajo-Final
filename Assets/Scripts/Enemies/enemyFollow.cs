@@ -8,6 +8,7 @@ public class enemyFollow : Enemies, IgetEnemyDamaged
     {
         FindPlayer();
         damage = 1;
+        GM = GameObject.FindGameObjectWithTag("GameController").GetComponent<gameManager>();
     }
 
     void Update()
@@ -46,6 +47,7 @@ public class enemyFollow : Enemies, IgetEnemyDamaged
         if (hp <= 0)
         {
             Destroy(this.gameObject);
+            GM.enemyCount++;
         }
     }
 

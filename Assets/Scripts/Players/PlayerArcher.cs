@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerArcher : Heroes, Iobject, IgetDamagedInterface
 {
     public Vector2 Mov { get { return mov; } }
+    public int HP { get { return hp; } }
     private Arrow arrowScript;
 
     public static event Action<string> onSceneChange;
@@ -98,6 +99,7 @@ public class PlayerArcher : Heroes, Iobject, IgetDamagedInterface
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Revive();
+                onHpChange?.Invoke("FULLHP2");
             }
         }
     }

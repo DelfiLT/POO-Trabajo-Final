@@ -7,9 +7,9 @@ using UnityEngine;
 
 public class meleeplayer : Heroes, Iobject, IgetDamagedInterface
 {
-    public Vector2 Mov { get { return mov; } }
+    public int HP { get { return hp; } }
     public Animator lanceAnim;
-    
+
     public lance lanceScript; 
 
     public static event Action<string> onSceneChange;
@@ -123,6 +123,7 @@ public class meleeplayer : Heroes, Iobject, IgetDamagedInterface
             if(Input.GetKeyDown(KeyCode.O))
             {
                 Revive();
+                onHpChange?.Invoke("FULLHP1");
             }
         }
     }
