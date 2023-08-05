@@ -15,6 +15,7 @@ public class EnemyArcher : Enemies, IgetEnemyDamaged
     void Start()
     {
        FindPlayer();
+       GM = GameObject.FindGameObjectWithTag("GameController").GetComponent<gameManager>();
     }
 
     void Update()
@@ -64,6 +65,7 @@ public class EnemyArcher : Enemies, IgetEnemyDamaged
         if (hp <= 0)
         {
             Destroy(this.gameObject);
+            GM.enemyCount++;
         }
     }
 }

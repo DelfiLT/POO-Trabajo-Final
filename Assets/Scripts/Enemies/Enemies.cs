@@ -10,6 +10,8 @@ public class Enemies : MonoBehaviour
     [SerializeField] protected float minRange;
     [SerializeField] public int damage;
 
+    public gameManager GM;
+
     protected float distanceFromPlayer1;
     protected float distanceFromPlayer2;
 
