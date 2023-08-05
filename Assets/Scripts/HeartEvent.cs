@@ -1,43 +1,64 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class HeartEvent : MonoBehaviour
 {
-    public Sprite[] Hearts;
-    public int heartCount;
+    public GameObject[] HeartsP1;
+    public GameObject[] HeartsP2;
     
-    void HeartsUI ()
+    void HeartsUI (string hearts)
     {
-        heartCount++;
+        if (hearts == "1HP1")
+        {
+            HeartsP1[2].SetActive(false);
+        }
+        if (hearts == "2HP1")
+        {
+            HeartsP1[1].SetActive(false);
+        }
+        if (hearts == "3HP1")
+        {
+            HeartsP1[0].SetActive(false);
+        }
+        if (hearts == "FULLHP1")
+        {
+            HeartsP1[0].SetActive(true);
+            HeartsP1[1].SetActive(true);
+            HeartsP1[2].SetActive(true);
+        }
 
-        if (heartCount == 1)
+        if (hearts == "1HP2")
         {
-            Debug.Log("Sacar 1 corazon");
+            HeartsP2[2].SetActive(false);
         }
-        if (heartCount == 2)
+        if (hearts == "2HP2")
         {
-            Debug.Log("Sacar 2 corazon");
+            HeartsP2[1].SetActive(false);
         }
-        if (heartCount == 1)
+        if (hearts == "3HP2")
         {
-            Debug.Log("Sacar 3 corazon");
+            HeartsP2[0].SetActive(false);
         }
-        if (heartCount == 4)
+        if (hearts == "FULLHP2")
         {
-            heartCount = 0;
-            Debug.Log("Poner corazones");
+            HeartsP2[0].SetActive(true);
+            HeartsP2[1].SetActive(true);
+            HeartsP2[2].SetActive(true);
         }
     }
 
     private void OnEnable()
     {
-        meleeplayer.heartEvent += HeartsUI;
+        meleeplayer.onHpChange += HeartsUI;
+        PlayerArcher.onHpChange += HeartsUI;
     }
 
     private void OnDisable()
     {
-        meleeplayer.heartEvent -= HeartsUI;
+        meleeplayer.onHpChange -= HeartsUI;
+        PlayerArcher.onHpChange -= HeartsUI;
     }
 
 }

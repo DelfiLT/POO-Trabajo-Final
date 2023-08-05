@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class Heroes : MonoBehaviour
 {
-    [SerializeField] protected int hp;
+    public int hp;
     [SerializeField] protected float velocity;
     [SerializeField] protected int lifeQuantity = 3;
     [SerializeField] protected bool canRevive = false;
@@ -29,8 +29,8 @@ public class Heroes : MonoBehaviour
 
         if(hp <= 0 && canRevive)
         {
+            hp = 0;
             velocity = 0;
-            Rb.mass = 99999;
         }
 
         if (hp <= 0 && lifeQuantity <= 0)
@@ -47,7 +47,6 @@ public class Heroes : MonoBehaviour
             lifeQuantity--;
             hp = 10;
             velocity = 10;
-            Rb.mass = 2000;
         }
     }
 

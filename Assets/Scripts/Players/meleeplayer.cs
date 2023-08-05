@@ -14,8 +14,7 @@ public class meleeplayer : Heroes, Iobject, IgetDamagedInterface
 
     public static event Action<string> onSceneChange;
     public static event Action<string> onUIP1Change;
-    public delegate void HeartEvent();
-    public static HeartEvent heartEvent;
+    public static event Action<string> onHpChange;
 
     public GameObject lance;
 
@@ -55,13 +54,12 @@ public class meleeplayer : Heroes, Iobject, IgetDamagedInterface
     {
         Movement();
         Die();
-        deathScreen();
+        UIManager();
     }
 
     public void GetDamaged(int damage)
     {
         hp -=  damage;
-        heartEvent?.Invoke();
     }
 
     public void PickObject(string objectName)
@@ -80,9 +78,9 @@ public class meleeplayer : Heroes, Iobject, IgetDamagedInterface
         }
     }
 
-    public void deathScreen()
+    public void UIManager()
     {
-        if(hp == 0 && lifeQuantity > 0)
+        if(hp <= 0 && lifeQuantity > 0)
         {
             onSceneChange?.Invoke("revivePanelP1");
         }
@@ -92,9 +90,29 @@ public class meleeplayer : Heroes, Iobject, IgetDamagedInterface
             onSceneChange?.Invoke("disRevivePanelP1");
         }
 
-        if (hp == 0 && lifeQuantity == 0)
+        if (hp <= 0 && lifeQuantity == 0)
         {
             onSceneChange?.Invoke("deathPanelP1");  
+        }
+
+        if(hp == 12)
+        {
+            onHpChange?.Invoke("FULLHP1");
+        }
+
+        if(hp == 8)
+        {
+            onHpChange?.Invoke("1HP1");
+        }
+
+        if(hp == 4)
+        {
+            onHpChange?.Invoke("2HP1");
+        }
+
+        if(hp == 0)
+        {
+            onHpChange?.Invoke("3HP1");
         }
     }
 

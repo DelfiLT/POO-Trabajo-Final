@@ -7,6 +7,7 @@ public class Enemies : MonoBehaviour
     [SerializeField] protected int hp;
     [SerializeField] protected float velocity;
     [SerializeField] protected float range;
+    [SerializeField] protected float minRange;
     [SerializeField] public int damage;
 
     protected float distanceFromPlayer1;

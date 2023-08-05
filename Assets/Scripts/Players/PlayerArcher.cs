@@ -10,7 +10,7 @@ public class PlayerArcher : Heroes, Iobject, IgetDamagedInterface
 
     public static event Action<string> onSceneChange;
     public static event Action<string> onUIP2Change;
-
+    public static event Action<string> onHpChange;
     void Start()
     {
         arrowScript = GameObject.FindGameObjectWithTag("Arrow")?.GetComponent<Arrow>();
@@ -30,7 +30,7 @@ public class PlayerArcher : Heroes, Iobject, IgetDamagedInterface
     {
         Movement();
         Die();
-        deathScreen();
+        UIManager();
     }
 
     public void GetDamaged(int damage)
@@ -54,7 +54,7 @@ public class PlayerArcher : Heroes, Iobject, IgetDamagedInterface
         }
     }
 
-    public void deathScreen()
+    public void UIManager()
     {
         if (hp == 0 && lifeQuantity > 0)
         {
@@ -69,6 +69,25 @@ public class PlayerArcher : Heroes, Iobject, IgetDamagedInterface
         if (hp == 0 && lifeQuantity == 0)
         {
             onSceneChange?.Invoke("deathPanelP2");
+        }
+        if (hp == 12)
+        {
+            onHpChange?.Invoke("FULLHP2");
+        }
+
+        if (hp == 8)
+        {
+            onHpChange?.Invoke("1HP2");
+        }
+
+        if (hp == 4)
+        {
+            onHpChange?.Invoke("2HP2");
+        }
+
+        if (hp == 0)
+        {
+            onHpChange?.Invoke("3HP2");
         }
     }
 

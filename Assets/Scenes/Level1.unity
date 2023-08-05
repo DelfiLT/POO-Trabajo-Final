@@ -391,10 +391,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5157064885717738425, guid: ed4ba671759ca2d44a452fdbda280498, type: 3}
-      propertyPath: hp
-      value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 5157064885717738425, guid: ed4ba671759ca2d44a452fdbda280498, type: 3}
       propertyPath: deathPanel
       value: 
       objectReference: {fileID: 1542357795}
@@ -418,14 +414,6 @@ PrefabInstance:
       propertyPath: velocityScrollUI
       value: 
       objectReference: {fileID: 1996705091}
-    - target: {fileID: 5157064885717738428, guid: ed4ba671759ca2d44a452fdbda280498, type: 3}
-      propertyPath: m_Mass
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 5157064885717738428, guid: ed4ba671759ca2d44a452fdbda280498, type: 3}
-      propertyPath: m_UseAutoMass
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed4ba671759ca2d44a452fdbda280498, type: 3}
 --- !u!1001 &217756895
@@ -810,12 +798,12 @@ GameObject:
   - component: {fileID: 337024160}
   - component: {fileID: 337024159}
   m_Layer: 5
-  m_Name: heart 1 P1 (2)
+  m_Name: heart 3 P1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &337024158
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1384,8 +1372,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 880121540}
-  - {fileID: 1824866172}
   - {fileID: 1427156427}
+  - {fileID: 1824866172}
   m_Father: {fileID: 412630079}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2173,7 +2161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &880121540
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3368,12 +3356,12 @@ GameObject:
   - component: {fileID: 1427156429}
   - component: {fileID: 1427156428}
   m_Layer: 5
-  m_Name: heart 1 P2 (2)
+  m_Name: heart 2 P2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1427156427
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3387,7 +3375,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 544995864}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3658,14 +3646,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: playerArcher
       objectReference: {fileID: 0}
-    - target: {fileID: 2232373488113996084, guid: 666da3309163e0a4894a06475909f347, type: 3}
-      propertyPath: m_Mass
-      value: 9999
-      objectReference: {fileID: 0}
-    - target: {fileID: 2232373488113996086, guid: 666da3309163e0a4894a06475909f347, type: 3}
-      propertyPath: hp
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 2232373488113996086, guid: 666da3309163e0a4894a06475909f347, type: 3}
       propertyPath: deathPanel
       value: 
@@ -3674,10 +3654,6 @@ PrefabInstance:
       propertyPath: revivePanel
       value: 
       objectReference: {fileID: 695943928}
-    - target: {fileID: 2232373488113996086, guid: 666da3309163e0a4894a06475909f347, type: 3}
-      propertyPath: lifeQuantity
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2232373488113996086, guid: 666da3309163e0a4894a06475909f347, type: 3}
       propertyPath: damageScrollUI
       value: 
@@ -3874,7 +3850,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1779516356
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4203,8 +4179,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d97636a4c02e004996bc3ce64c3cc77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hearts: []
-  heartCount: 0
+  HeartsP1:
+  - {fileID: 1779516355}
+  - {fileID: 1917452487}
+  - {fileID: 337024157}
+  HeartsP2:
+  - {fileID: 880121539}
+  - {fileID: 1427156426}
+  - {fileID: 1824866171}
 --- !u!1 &1816669895
 GameObject:
   m_ObjectHideFlags: 0
@@ -4370,12 +4352,12 @@ GameObject:
   - component: {fileID: 1824866174}
   - component: {fileID: 1824866173}
   m_Layer: 5
-  m_Name: heart 1 P2 (1)
+  m_Name: heart 3 P2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1824866172
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4389,7 +4371,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 544995864}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4757,12 +4739,12 @@ GameObject:
   - component: {fileID: 1917452490}
   - component: {fileID: 1917452489}
   m_Layer: 5
-  m_Name: heart 1 P1 (1)
+  m_Name: heart 2 P1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1917452488
 RectTransform:
   m_ObjectHideFlags: 0

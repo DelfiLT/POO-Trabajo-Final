@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2109fd5c0b1cf034c837fcf90a5dc49c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
+  hp: 12
   velocity: 10
   lifeQuantity: 3
   canRevive: 0
@@ -194,13 +194,9 @@ MonoBehaviour:
   lanceAnim: {fileID: 0}
   lanceScript: {fileID: 0}
   lance: {fileID: 5157064886827565538}
-  deathPanel: {fileID: 0}
-  revivePanel: {fileID: 0}
-  damageScrollUI: {fileID: 0}
-  velocityScrollUI: {fileID: 0}
 --- !u!95 &5157064885717738426
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -217,7 +213,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &5157064885717738428
 Rigidbody2D:
   serializedVersion: 4
@@ -379,7 +375,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!95 &5157064886827565541
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -396,4 +392,4 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0

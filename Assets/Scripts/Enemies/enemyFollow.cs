@@ -21,11 +21,11 @@ public class enemyFollow : Enemies, IgetEnemyDamaged
             distanceFromPlayer2 = Vector2.Distance(player2Transform.position, transform.position);
         }
 
-        if (distanceFromPlayer1 < range && distanceFromPlayer1 < distanceFromPlayer2 && player1Transform != null)
+        if (distanceFromPlayer1 > minRange && distanceFromPlayer1 < range && distanceFromPlayer1 < distanceFromPlayer2 && player1Transform != null)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player1Transform.position, velocity * Time.deltaTime);
         }
-        if (distanceFromPlayer2 < range && distanceFromPlayer2 < distanceFromPlayer1 && player2Transform != null)
+        if (distanceFromPlayer2 > minRange && distanceFromPlayer2 < range && distanceFromPlayer2 < distanceFromPlayer1 && player2Transform != null)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player2Transform.position, velocity * Time.deltaTime);
         }

@@ -3,7 +3,7 @@ guid: 1355a5a256ae2e7418ea426acb7ba7be
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -9851,10 +9850,10 @@ TextureImporter:
       TilesetFloor_363: 1672830611
       TilesetFloor_457: 501309436
       TilesetFloor_443: 1600101736
-      TilesetFloor_252: -446130649
       TilesetFloor_453: -1097340288
       TilesetFloor_454: -1784620850
       TilesetFloor_353: -1282228009
+      TilesetFloor_252: -446130649
       TilesetFloor_88: 388331531
       TilesetFloor_100: 1801399533
       TilesetFloor_142: 1028886035
