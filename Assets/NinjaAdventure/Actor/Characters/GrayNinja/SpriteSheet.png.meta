@@ -3,7 +3,7 @@ guid: e6c82374bc941784f9f9402c574ab059
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -739,33 +738,33 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SpriteSheet_0: 320358929
-      SpriteSheet_1: 931189036
-      SpriteSheet_10: 736008574
-      SpriteSheet_11: 1315734872
-      SpriteSheet_12: -1543361902
       SpriteSheet_13: 1353915554
-      SpriteSheet_14: -180189864
-      SpriteSheet_15: 108724212
-      SpriteSheet_16: 666530742
-      SpriteSheet_17: 319369483
-      SpriteSheet_18: -718656370
       SpriteSheet_19: -301986739
-      SpriteSheet_2: -1878539175
-      SpriteSheet_20: -1733137437
-      SpriteSheet_21: 1481580377
-      SpriteSheet_22: -2004664336
-      SpriteSheet_23: -1610969446
-      SpriteSheet_24: -1005575111
-      SpriteSheet_25: -1316372738
       SpriteSheet_26: -1147647212
-      SpriteSheet_27: -1101989221
-      SpriteSheet_3: 1436023948
-      SpriteSheet_4: 57276071
       SpriteSheet_5: 1962687608
-      SpriteSheet_6: -587289382
+      SpriteSheet_23: -1610969446
+      SpriteSheet_4: 57276071
       SpriteSheet_7: 373943135
       SpriteSheet_8: 2137006920
+      SpriteSheet_24: -1005575111
+      SpriteSheet_27: -1101989221
+      SpriteSheet_16: 666530742
+      SpriteSheet_2: -1878539175
+      SpriteSheet_14: -180189864
+      SpriteSheet_6: -587289382
+      SpriteSheet_0: 320358929
+      SpriteSheet_25: -1316372738
+      SpriteSheet_1: 931189036
+      SpriteSheet_10: 736008574
+      SpriteSheet_22: -2004664336
+      SpriteSheet_15: 108724212
+      SpriteSheet_3: 1436023948
+      SpriteSheet_21: 1481580377
+      SpriteSheet_12: -1543361902
+      SpriteSheet_20: -1733137437
+      SpriteSheet_17: 319369483
+      SpriteSheet_18: -718656370
+      SpriteSheet_11: 1315734872
       SpriteSheet_9: -1338216242
   spritePackingTag: 
   pSDRemoveMatte: 0

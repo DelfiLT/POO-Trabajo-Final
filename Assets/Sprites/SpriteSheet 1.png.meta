@@ -487,21 +487,21 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      SpriteSheet_13: 698764290
+      SpriteSheet_5: -505864528
+      SpriteSheet_4: -1095357792
+      SpriteSheet_7: 826202963
+      SpriteSheet_8: -171752809
+      SpriteSheet_2: 1632396421
+      SpriteSheet_14: 1902952303
+      SpriteSheet_6: 554595709
       SpriteSheet_0: -2135962069
       SpriteSheet_1: 1898661343
       SpriteSheet_10: 769223238
-      SpriteSheet_11: -2004890848
-      SpriteSheet_12: 1807578613
-      SpriteSheet_13: 698764290
-      SpriteSheet_14: 1902952303
       SpriteSheet_15: -1017562951
-      SpriteSheet_2: 1632396421
       SpriteSheet_3: -282712873
-      SpriteSheet_4: -1095357792
-      SpriteSheet_5: -505864528
-      SpriteSheet_6: 554595709
-      SpriteSheet_7: 826202963
-      SpriteSheet_8: -171752809
+      SpriteSheet_12: 1807578613
+      SpriteSheet_11: -2004890848
       SpriteSheet_9: 417843626
   spritePackingTag: 
   pSDRemoveMatte: 0

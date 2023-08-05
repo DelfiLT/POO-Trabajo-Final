@@ -16,6 +16,10 @@ TagManager:
   - revivePanel2
   - deathPanel1
   - deathPanel2
+  - damageScrollP1
+  - damageScrollP2
+  - velocityScrollP1
+  - velocityScrollP2
   layers:
   - Default
   - TransparentFX

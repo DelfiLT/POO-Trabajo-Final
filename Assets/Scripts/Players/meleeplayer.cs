@@ -1,4 +1,5 @@
  using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -9,13 +10,13 @@ public class meleeplayer : Heroes, Iobject, IgetDamagedInterface
     public Vector2 Mov { get { return mov; } }
     public Animator lanceAnim;
     
-    public int lanceDamage = 1;
+    public lance lanceScript; 
+
+    public static event Action<string> onSceneChange;
+    public static event Action<string> onUIP1Change;
+    public static event Action<string> onHpChange;
 
     public GameObject lance;
-    public GameObject deathPanel;
-    public GameObject revivePanel;
-    public GameObject damageScrollUI;
-    public GameObject velocityScrollUI;
 
     void Start()
     {
@@ -23,6 +24,7 @@ public class meleeplayer : Heroes, Iobject, IgetDamagedInterface
         Anim = GetComponent<Animator>();
 
         lance = GameObject.FindGameObjectWithTag("lance");
+        lanceScript = GameObject.FindGameObjectWithTag("lance")?.GetComponent<lance>();
         lanceAnim = GameObject.FindGameObjectWithTag("lance").GetComponent<Animator>();
         lance.SetActive(false);
     }
@@ -52,7 +54,7 @@ public class meleeplayer : Heroes, Iobject, IgetDamagedInterface
     {
         Movement();
         Die();
-        deathScreen();
+        UIManager();
     }
 
     public void GetDamaged(int damage)
@@ -68,31 +70,49 @@ public class meleeplayer : Heroes, Iobject, IgetDamagedInterface
         }
         if(objectName == "velocity")
         {
-            velocityScrollUI.SetActive(true);
-            velocity = velocity * 1.2f;
+            StartCoroutine(activeVelBoost());
         }
         if(objectName == "damage")
         {
-            damageScrollUI.SetActive(true);
-            lanceDamage++;
+            StartCoroutine(activeDmgBoost());
         }
     }
 
-    public void deathScreen()
+    public void UIManager()
     {
-        if(hp == 0 && lifeQuantity > 0)
+        if(hp <= 0 && lifeQuantity > 0)
         {
-            revivePanel.SetActive(true);
+            onSceneChange?.Invoke("revivePanelP1");
         }
 
         if (hp > 0)
         {
-            revivePanel.SetActive(false);
+            onSceneChange?.Invoke("disRevivePanelP1");
         }
 
-        if (hp == 0 && lifeQuantity == 0)
+        if (hp <= 0 && lifeQuantity == 0)
         {
-            deathPanel.SetActive(true);
+            onSceneChange?.Invoke("deathPanelP1");  
+        }
+
+        if(hp == 12)
+        {
+            onHpChange?.Invoke("FULLHP1");
+        }
+
+        if(hp == 8)
+        {
+            onHpChange?.Invoke("1HP1");
+        }
+
+        if(hp == 4)
+        {
+            onHpChange?.Invoke("2HP1");
+        }
+
+        if(hp == 0)
+        {
+            onHpChange?.Invoke("3HP1");
         }
     }
 
@@ -107,4 +127,21 @@ public class meleeplayer : Heroes, Iobject, IgetDamagedInterface
         }
     }
 
+    IEnumerator activeDmgBoost()
+    {
+        onUIP1Change?.Invoke("damageScrollP1");
+        lanceScript.lanceDamage++;
+        yield return new WaitForSeconds(10f);
+        onUIP1Change?.Invoke("disDamageScrollP1");
+        lanceScript.lanceDamage--;
+    }
+
+    IEnumerator activeVelBoost()
+    {
+        onUIP1Change?.Invoke("velocityScrollP1");
+        velocity = velocity * 1.2f;
+        yield return new WaitForSeconds(10f);
+        onUIP1Change?.Invoke("disVelocityScrollP1");
+        velocity = velocity / 1.2f;
+    }
 }

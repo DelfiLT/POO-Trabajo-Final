@@ -297,20 +297,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7f7ed3c1b47d2e4b8b41e660866a036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
+  hp: 12
   velocity: 10
-  lifeQuantity: 80
+  lifeQuantity: 3
   canRevive: 0
-  canFire: 0
   mov: {x: 0, y: 0}
-  movX: 0
-  movY: 0
-  arrowDamage: 1
-  deathPanel: {fileID: 0}
-  revivePanel: {fileID: 0}
 --- !u!95 &2232373488113996085
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -327,7 +321,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &2232373488113996084
 Rigidbody2D:
   serializedVersion: 4

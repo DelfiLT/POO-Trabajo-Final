@@ -3,7 +3,7 @@ guid: 258bfc8cb0fdd064facdfb7089937565
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -613,28 +612,28 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      TilesetNature_0: 2103469788
-      TilesetNature_1: -220807132
-      TilesetNature_10: 1534748569
-      TilesetNature_11: 1335459726
-      TilesetNature_12: -583197514
-      TilesetNature_13: -1762742371
-      TilesetNature_14: -401802490
-      TilesetNature_15: 2123714445
-      TilesetNature_16: -2132870832
-      TilesetNature_17: -1381288250
-      TilesetNature_18: -1211879769
-      TilesetNature_19: 465139313
-      TilesetNature_2: -1963612330
-      TilesetNature_20: -1244739720
       TilesetNature_21: -1594967176
-      TilesetNature_3: 799526027
-      TilesetNature_4: -459322685
-      TilesetNature_5: -1819876605
-      TilesetNature_6: 982313418
-      TilesetNature_7: -936936995
-      TilesetNature_8: -1644807477
+      TilesetNature_14: -401802490
       TilesetNature_9: 141535893
+      TilesetNature_2: -1963612330
+      TilesetNature_7: -936936995
+      TilesetNature_13: -1762742371
+      TilesetNature_6: 982313418
+      TilesetNature_0: 2103469788
+      TilesetNature_19: 465139313
+      TilesetNature_10: 1534748569
+      TilesetNature_17: -1381288250
+      TilesetNature_4: -459322685
+      TilesetNature_20: -1244739720
+      TilesetNature_11: 1335459726
+      TilesetNature_5: -1819876605
+      TilesetNature_3: 799526027
+      TilesetNature_12: -583197514
+      TilesetNature_8: -1644807477
+      TilesetNature_1: -220807132
+      TilesetNature_16: -2132870832
+      TilesetNature_18: -1211879769
+      TilesetNature_15: 2123714445
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

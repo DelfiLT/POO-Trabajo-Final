@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyFollow : Enemies
+public class enemyFollow : Enemies, IgetEnemyDamaged
 {
     void Start()
     {
@@ -21,11 +21,11 @@ public class enemyFollow : Enemies
             distanceFromPlayer2 = Vector2.Distance(player2Transform.position, transform.position);
         }
 
-        if (distanceFromPlayer1 < range && distanceFromPlayer1 < distanceFromPlayer2 && player1Transform != null)
+        if (distanceFromPlayer1 > minRange && distanceFromPlayer1 < range && distanceFromPlayer1 < distanceFromPlayer2 && player1Transform != null)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player1Transform.position, velocity * Time.deltaTime);
         }
-        if (distanceFromPlayer2 < range && distanceFromPlayer2 < distanceFromPlayer1 && player2Transform != null)
+        if (distanceFromPlayer2 > minRange && distanceFromPlayer2 < range && distanceFromPlayer2 < distanceFromPlayer1 && player2Transform != null)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player2Transform.position, velocity * Time.deltaTime);
         }
@@ -36,19 +36,9 @@ public class enemyFollow : Enemies
         Die();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void GetEnemyDamage(int damage)
     {
-        if (collision.gameObject.CompareTag("lance"))
-        {
-            int lanceDamage = GameObject.FindGameObjectWithTag("Player1").GetComponent<meleeplayer>().lanceDamage;
-            hp = hp - lanceDamage;
-        }
-        if (collision.gameObject.CompareTag("Arrow"))
-        {
-            Debug.Log("hit");
-            int arrowDamage = GameObject.FindGameObjectWithTag("Player2").GetComponent<PlayerArcher>().arrowDamage;
-            hp = hp - arrowDamage;
-        }
+        hp -= damage;
     }
 
     protected override void Die()
@@ -59,7 +49,6 @@ public class enemyFollow : Enemies
         }
     }
 
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.GetComponent<IgetDamagedInterface>() != null)
@@ -67,7 +56,4 @@ public class enemyFollow : Enemies
             collision.gameObject.GetComponent<IgetDamagedInterface>().GetDamaged(damage);
         }
     }
-
-
-
 }

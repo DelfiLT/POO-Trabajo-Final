@@ -100,10 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcData: {fileID: 11400000, guid: 4e51a1f36972e9f4e93d1b832e87b41e, type: 2}
-  dialogs:
-  - AAAAA ayudaaaa
-  - me wa a moriiiirrrrr
-  - pipipipipip
+  dialogs: []
   dialog: {fileID: 80648959727599473}
 --- !u!61 &6009441624759372057
 BoxCollider2D:

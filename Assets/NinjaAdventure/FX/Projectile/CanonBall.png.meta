@@ -3,7 +3,7 @@ guid: 8cc6e273f51b90d428ea4076090aeee8
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -256,11 +255,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      CanonBall_0: 878520203
-      CanonBall_1: 1597701783
-      CanonBall_2: 810394166
       CanonBall_3: 129279439
+      CanonBall_0: 878520203
       CanonBall_4: -1336671824
+      CanonBall_2: 810394166
+      CanonBall_1: 1597701783
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

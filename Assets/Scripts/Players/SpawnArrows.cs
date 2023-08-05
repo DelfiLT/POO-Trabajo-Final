@@ -17,6 +17,7 @@ public class SpawnArrows : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             GameObject newArrow = Instantiate(arrowPrefab, SpawnPosition.position, SpawnPosition.rotation);
+            
         }
     }
 }

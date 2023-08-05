@@ -3,7 +3,7 @@ guid: 8d3d5f65cc98c5942b120a8c81887d46
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -63,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -256,10 +255,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Heart_0: 760094517
-      Heart_1: -1036339611
       Heart_2: 646714830
       Heart_3: -524719115
+      Heart_0: 760094517
+      Heart_1: -1036339611
       Heart_4: -446759216
   spritePackingTag: 
   pSDRemoveMatte: 0
