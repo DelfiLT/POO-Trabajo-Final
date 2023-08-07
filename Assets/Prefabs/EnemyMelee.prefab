@@ -151,7 +151,7 @@ MonoBehaviour:
   velocity: 4
   range: 10
   minRange: 1
-  damage: 3
+  damage: 1
   GM: {fileID: 0}
 --- !u!95 &8460169123957336375
 Animator:

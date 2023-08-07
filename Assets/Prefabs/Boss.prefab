@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 3401853765371614003}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -121,11 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde03bf0684e6304693409d469bad010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 15
+  hp: 30
   velocity: 8
   range: 10
   minRange: 1
-  damage: 0
+  damage: 3
   GM: {fileID: 0}
 --- !u!50 &3401853765371613997
 Rigidbody2D:
@@ -186,9 +186,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d55c4fdee99109047a3ae10c4908a6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 0
-  velocity: 0
   range: 10
   minRange: 1
-  damage: 0
-  GM: {fileID: 0}
