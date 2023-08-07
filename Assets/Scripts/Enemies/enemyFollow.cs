@@ -8,7 +8,7 @@ public class enemyFollow : Enemies, IgetEnemyDamaged
     {
         FindPlayer();
         damage = 1;
-        GM = GameObject.FindGameObjectWithTag("GameController").GetComponent<gameManager>();
+        GM = GameObject.FindGameObjectWithTag("GameController")?.GetComponent<gameManager>();
     }
 
     void Update()

@@ -369,6 +369,8 @@ MonoBehaviour:
   level2Coll: {fileID: 2001250728}
   enemyCount: 0
   level1EnemiesQuantity: 0
+  meleeHp: 0
+  archerHp: 0
 --- !u!4 &62230722
 Transform:
   m_ObjectHideFlags: 0
