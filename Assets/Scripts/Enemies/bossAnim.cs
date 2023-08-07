@@ -2,11 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bossAnim : Enemies
+public class bossAnim : MonoBehaviour
 {
+    private float distanceFromPlayer1;
+    private float distanceFromPlayer2;
+    private Transform player1Transform;
+    private Transform player2Transform;
+    public float range;
+    public float minRange;
+
+    protected Animator AnimEnemy;
+
     private void Start()
     {
-        FindPlayer();
+        player1Transform = GameObject.FindGameObjectWithTag("Player1")?.transform;
+        player2Transform = GameObject.FindGameObjectWithTag("Player2")?.transform;
         AnimEnemy = GetComponent<Animator>();
     }
 
