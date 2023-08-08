@@ -27,13 +27,14 @@ public class PlayerArcher : Heroes, Iobject, IgetDamagedInterface
         Anim.SetFloat("movX", mov.x);
         Anim.SetFloat("movY", mov.y);
         mov.Normalize();
+        if (hp > 12) hp = 12;
+        UIManager();
     }
 
     private void FixedUpdate()
     {
         Movement();
         Die();
-        UIManager();
     }
 
     public void GetDamaged(int damage)

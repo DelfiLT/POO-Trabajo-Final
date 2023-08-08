@@ -8,6 +8,7 @@ public class gameManager : MonoBehaviour
 {
     private meleeplayer meleePlayer;
     private PlayerArcher archerPlayer;
+    private enemyFollow boss;
     public TextMeshProUGUI enemyCountUI;
     public GameObject level1EnemiesFather;
     public BoxCollider2D level2Coll;
@@ -20,6 +21,7 @@ public class gameManager : MonoBehaviour
 
     void Start()
     {
+        boss = GameObject.FindGameObjectWithTag("Boss")?.GetComponent<enemyFollow>();
         meleePlayer = GameObject.FindGameObjectWithTag("Player1")?.GetComponent<meleeplayer>();
         archerPlayer = GameObject.FindGameObjectWithTag("Player2")?.GetComponent<PlayerArcher>();
 
@@ -43,6 +45,11 @@ public class gameManager : MonoBehaviour
         {
             Debug.Log("ACTIVATE LEVEL 1 SCREEN");
             level2Coll.enabled = false;
+        }
+
+        if(boss.HP == 0)
+        {
+            SceneManager.LoadScene("Victory");
         }
     }
 }
