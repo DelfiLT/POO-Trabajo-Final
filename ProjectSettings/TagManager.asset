@@ -20,6 +20,9 @@ TagManager:
   - damageScrollP2
   - velocityScrollP1
   - velocityScrollP2
+  - GM
+  - Boss
+  - lvl2trigger
   layers:
   - Default
   - TransparentFX

@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1727830803, guid: 044815bdc7c331d44a661e13aaea4f24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -127,9 +127,6 @@ MonoBehaviour:
   minRange: 0
   damage: 1
   GM: {fileID: 0}
-  lineOfSite: 10
-  shootingRange: 5
-  fireRate: 1
   bullet: {fileID: 3877310962248912387, guid: 20516e8164872a842aefd61d89d89a87, type: 3}
   bulletParent: {fileID: 8532983979395177251}
 --- !u!61 &4338722147375351912

@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class enemyFollow : Enemies, IgetEnemyDamaged
 {
+    public int HP { get { return hp; } }
+
     void Start()
     {
         FindPlayer();
-        GM = GameObject.FindGameObjectWithTag("GameController").GetComponent<gameManager>();
+        GM = GameObject.FindGameObjectWithTag("GM").GetComponent<gameManager>();
     }
 
     void Update()

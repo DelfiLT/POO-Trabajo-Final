@@ -48,13 +48,15 @@ public class meleeplayer : Heroes, Iobject, IgetDamagedInterface
         {
             lance.SetActive(false);
         }
+
+        if(hp > 12) hp = 12;
+        UIManager();
     }
 
     private void FixedUpdate()
     {
         Movement();
         Die();
-        UIManager();
     }
 
     public void GetDamaged(int damage)
@@ -125,6 +127,14 @@ public class meleeplayer : Heroes, Iobject, IgetDamagedInterface
                 Revive();
                 onHpChange?.Invoke("FULLHP1");
             }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("lvl2trigger"))
+        {
+            hp = 12;
         }
     }
 
