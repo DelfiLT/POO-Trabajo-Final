@@ -5,9 +5,7 @@ using UnityEngine;
 
 public class EnemyArcher : Enemies, IgetEnemyDamaged
 {
-    public float lineOfSite;
-    public float shootingRange;
-    public float fireRate = 1f;
+    private float fireRate = 1f;
     private float nextFireTime;
     public GameObject bullet;
     public GameObject bulletParent;
@@ -24,26 +22,26 @@ public class EnemyArcher : Enemies, IgetEnemyDamaged
         {
             distanceFromPlayer1 = Vector2.Distance(player1Transform.position, transform.position);
         }
-        if (player2Transform != null)
+        if (player2Transform != null) 
         {
             distanceFromPlayer2 = Vector2.Distance(player2Transform.position, transform.position);
         }
 
-        if (distanceFromPlayer1 < lineOfSite && distanceFromPlayer1 > shootingRange && distanceFromPlayer1 < distanceFromPlayer2 && player1Transform != null)
+        if (distanceFromPlayer1 < range && distanceFromPlayer1 > minRange && distanceFromPlayer1 < distanceFromPlayer2 && player1Transform != null)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player1Transform.position, velocity * Time.deltaTime);
         }
-        else if (distanceFromPlayer1 <= shootingRange && nextFireTime < Time.time)
+        else if (distanceFromPlayer1 <= minRange && nextFireTime < Time.time)
         {
             Instantiate(bullet, bulletParent.transform.position, quaternion.identity);
             nextFireTime = Time.time + fireRate;
         }
 
-        if (distanceFromPlayer2 < lineOfSite && distanceFromPlayer2 > shootingRange && distanceFromPlayer2 < distanceFromPlayer1 && player2Transform != null)
+        if (distanceFromPlayer2 < range && distanceFromPlayer2 > minRange && distanceFromPlayer2 < distanceFromPlayer1 && player2Transform != null)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player2Transform.position, velocity * Time.deltaTime);
         }
-        else if (distanceFromPlayer2 <= shootingRange && nextFireTime < Time.time)
+        else if (distanceFromPlayer2 <= minRange && nextFireTime < Time.time)
         {
             Instantiate(bullet, bulletParent.transform.position, quaternion.identity);
             nextFireTime = Time.time + fireRate;

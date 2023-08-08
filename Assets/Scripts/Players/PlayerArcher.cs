@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class PlayerArcher : Heroes, Iobject, IgetDamagedInterface
 {
@@ -103,7 +105,6 @@ public class PlayerArcher : Heroes, Iobject, IgetDamagedInterface
             }
         }
     }
-
     IEnumerator activeDmgBoost()
     {
         onUIP2Change?.Invoke("damageScrollP2");
