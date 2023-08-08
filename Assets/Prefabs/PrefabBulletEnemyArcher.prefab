@@ -139,4 +139,5 @@ MonoBehaviour:
   player1Transform: {fileID: 0}
   player2Transform: {fileID: 0}
   speedBullet: 15
+  damage: 1
   particles: {fileID: 5928107291306316422, guid: 9c01586ee20367548883d611a7813e44, type: 3}
