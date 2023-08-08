@@ -124,9 +124,12 @@ MonoBehaviour:
   hp: 5
   velocity: 4
   range: 10
-  minRange: 5
-  damage: 0
+  minRange: 0
+  damage: 1
   GM: {fileID: 0}
+  lineOfSite: 10
+  shootingRange: 5
+  fireRate: 1
   bullet: {fileID: 3877310962248912387, guid: 20516e8164872a842aefd61d89d89a87, type: 3}
   bulletParent: {fileID: 8532983979395177251}
 --- !u!61 &4338722147375351912
@@ -139,7 +142,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}

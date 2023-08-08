@@ -24,7 +24,7 @@ public class Enemies : MonoBehaviour
 
     protected virtual void FindPlayer()
     {
-        player1Transform = GameObject.FindGameObjectWithTag("Player1").transform;
-        player2Transform = GameObject.FindGameObjectWithTag("Player2").transform;
+        player1Transform = GameObject.FindGameObjectWithTag("Player1")?.transform;
+        player2Transform = GameObject.FindGameObjectWithTag("Player2")?.transform;
     }
 }
