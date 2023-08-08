@@ -106,6 +106,15 @@ public class PlayerArcher : Heroes, Iobject, IgetDamagedInterface
             }
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("lvl2trigger"))
+        {
+            hp = 12;
+        }
+    }
+
     IEnumerator activeDmgBoost()
     {
         onUIP2Change?.Invoke("damageScrollP2");

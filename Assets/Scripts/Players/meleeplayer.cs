@@ -130,6 +130,14 @@ public class meleeplayer : Heroes, Iobject, IgetDamagedInterface
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("lvl2trigger"))
+        {
+            hp = 12;
+        }
+    }
+
     IEnumerator activeDmgBoost()
     {
         onUIP1Change?.Invoke("damageScrollP1");

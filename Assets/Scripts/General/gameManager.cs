@@ -10,6 +10,7 @@ public class gameManager : MonoBehaviour
     private PlayerArcher archerPlayer;
     private enemyFollow boss;
     public TextMeshProUGUI enemyCountUI;
+    public GameObject enemyBanner;
     public GameObject level1EnemiesFather;
     public BoxCollider2D level2Coll;
     
@@ -43,8 +44,8 @@ public class gameManager : MonoBehaviour
 
         if(enemyCount == level1EnemiesQuantity)
         {
-            Debug.Log("ACTIVATE LEVEL 1 SCREEN");
-            level2Coll.enabled = false;
+            level2Coll.isTrigger = true;
+            enemyBanner.SetActive(false);
         }
 
         if(boss.HP == 0)

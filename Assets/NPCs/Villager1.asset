@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Villager1
   m_EditorClassIdentifier: 
   dialogs:
-  - Dialogo 1
-  - Dialogo 2
-  - Dialogo 3
+  - POR FAVOR AYUDENNOS!
+  - NO QUEREMOS MORIR!
+  - AAAAAAA!
   timeMax: 6
